@@ -18,5 +18,5 @@ def hello(request):
 
 
 def showStudents(request):
-    list = [{id: 1, 'name': 'Jack-2'}, {id: 2, 'name': 'Rose'}]
+    list = [{'id': 1, 'name': 'Jack-2', 'age': 28}, {'id': 2, 'name': 'Rose', 'age': 32}]
     return render_to_response('student.html', {'students': list})
