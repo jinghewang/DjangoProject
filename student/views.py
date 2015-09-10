@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 
 # Create your views here.
 
@@ -15,3 +15,8 @@ def sayhello(request):
 
 def hello(request):
     return HttpResponse("Hello World")
+
+
+def showStudents(request):
+    list = [{id: 1, 'name': 'Jack-2'}, {id: 2, 'name': 'Rose'}]
+    return render_to_response('student.html', {'students': list})

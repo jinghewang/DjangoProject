@@ -22,5 +22,6 @@ from student.views import *
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^student/', sayhello),
-    url(r'^hello/', hello)
+    url(r'^hello/', hello),
+    url(r'^showStudents/$', showStudents)
 ]
