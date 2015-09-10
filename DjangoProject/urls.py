@@ -23,5 +23,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^student/', sayhello),
     url(r'^hello/', hello),
-    url(r'^showStudents/$', showStudents)
+    url(r'^showStudents/$', showStudents),
+    url(r'^showRealStudents/$', showRealStudents),
+    url(r'^$', showIndex)
 ]

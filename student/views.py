@@ -4,6 +4,7 @@ from django.shortcuts import render, render_to_response
 
 import datetime
 from django.http import HttpResponse
+from student.models import *
 
 
 def sayhello(request):
@@ -20,3 +21,12 @@ def hello(request):
 def showStudents(request):
     list = [{'id': 1, 'name': 'Jack-2', 'age': 28}, {'id': 2, 'name': 'Rose', 'age': 32}]
     return render_to_response('student.html', {'students': list})
+
+
+def showRealStudents(request):
+    list = Student.objects.all()
+    return render_to_response('student.html', {'students': list})
+
+
+def showIndex(request):
+    return render_to_response('index.html', {'title': 'wjh'})
