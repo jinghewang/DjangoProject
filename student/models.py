@@ -13,10 +13,16 @@ class Book(models.Model):
     name = models.CharField(max_length=50)
     pub_date = models.DateField()
 
+# from django.utils.timezone import *
+# from datetime import datetime
+
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
+
+    def was_published_recently(self):
+        return True;# self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
 
 class Choice(models.Model):
