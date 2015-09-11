@@ -8,3 +8,10 @@ class Student(models.Model):
     name = models.CharField(max_length=20, default='a')
     age = models.IntegerField(default=0)
 
+
+class Book(models.Model):
+    name = models.CharField(max_length=50)
+    pub_date = models.DateField()
+
+
+

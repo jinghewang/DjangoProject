@@ -29,4 +29,10 @@ def showRealStudents(request):
 
 
 def showIndex(request):
+    import django.contrib.auth
+    user = django.contrib.auth.get_user(request)
+    if isinstance(user,django.contrib.auth.models.AnonymousUser):
+        print 'logoff'
+    else:
+        print 'login'+ user.username
     return render_to_response('index.html', {'title': 'wjh'})
