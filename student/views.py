@@ -38,6 +38,12 @@ def showIndex(request):
     return render_to_response('index.html', {'title': 'wjh'})
 
 
+def index(request):
+    question = Question.objects.all()
+    return render_to_response('polls/index.html', {'latest_question_list': question})
+
+
+
 def detail(request, question_id):
     question = Question.objects.get(pk=question_id)
     return render_to_response('polls/detail.html', {'question': question})
