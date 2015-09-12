@@ -25,5 +25,11 @@ urlpatterns = [
     url(r'^hello/', hello),
     url(r'^showStudents/$', showStudents),
     url(r'^showRealStudents/$', showRealStudents),
-    url(r'^$', showIndex)
+    url(r'^$', showIndex),
+     # ex: /polls/5/
+    url(r'^polls/(?P<question_id>[0-9]+)/$', detail, name='detail'),
+    # ex: /polls/5/vote/
+    url(r'^polls/(?P<question_id>[0-9]+)/vote/$', vote, name='vote'),
+     # ex: /polls/5/results/
+    url(r'^polls/(?P<question_id>[0-9]+)/results/$', results, name='results'),
 ]
