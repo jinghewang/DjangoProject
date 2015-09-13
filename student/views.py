@@ -80,3 +80,13 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('results', args=(p.id,)))
+
+
+def session(request):
+    request.session['name'] = 'wjh'
+    return HttpResponse('set session:'+request.session.get('name'))
+
+
+def session2(request):
+    print request.session.get('name')
+    return HttpResponse('name:'+request.session.get('name'))
